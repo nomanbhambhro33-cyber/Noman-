@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noman Market - Buy & Sell</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f6f8;color:#222}
+header{background:#172337;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:bold}.logo span{color:#00a8ff}
+nav a{color:white;text-decoration:none;margin-left:22px}
+.hero{background:linear-gradient(135deg,#172337,#075985);color:white;text-align:center;padding:75px 20px}
+.hero h1{font-size:45px;margin-bottom:15px}.hero h1 span{color:#00a8ff}
+.hero p{font-size:18px;margin-bottom:25px}
+.btn{display:inline-block;background:#00a8ff;color:white;padding:13px 25px;border-radius:7px;text-decoration:none;border:none;cursor:pointer;font-weight:bold}
+.search-box{max-width:850px;margin:30px auto 40px;background:white;padding:20px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.15);display:flex;gap:10px}
+.search-box input,.search-box select{flex:1;padding:13px;border:1px solid #ddd;border-radius:6px}
+section{padding:55px 7%}.title{text-align:center;margin-bottom:35px}.title h2{font-size:32px;color:#172337}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.category{background:white;padding:25px;text-align:center;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.07)}
+.category .icon{font-size:45px;margin-bottom:10px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.product-image{height:180px;background:#eaf2f8;display:flex;align-items:center;justify-content:center;font-size:70px}
+.product-info{padding:18px}.price{color:#087f5b;font-size:21px;font-weight:bold;margin:10px 0}.location{color:#777;margin-bottom:15px}
+.sell{background:#e8f5ff;text-align:center}
+footer{background:#0d1624;color:white;text-align:center;padding:25px}
+@media(max-width:800px){header{flex-direction:column;gap:15px}.hero h1{font-size:34px}.search-box{margin:20px;flex-direction:column}.categories,.products{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.categories,.products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Noman <span>Market</span></div>
+<nav>
+<a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Products</a><a href="#sell">Sell</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>Buy & Sell on <span>Noman Market</span></h1>
+<p>Mobile, Computer, Electronics aur bohat kuch apne city mein buy aur sell karein.</p>
+<a href="sell.html" class="btn">+ Sell an Item</a>
+</section>
+
+<div class="search-box">
+<input type="text" placeholder="Search product...">
+<select><option>Select City</option><option>Mirpur Khas</option><option>Hyderabad</option><option>Karachi</option><option>Other</option></select>
+<button class="btn" onclick="alert('Search system next step mein connect hoga.')">Search</button>
+</div>
+
+<section id="categories">
+<div class="title"><h2>Browse Categories</h2></div>
+<div class="categories">
+<div class="category"><div class="icon">📱</div><h3>Mobile</h3></div>
+<div class="category"><div class="icon">💻</div><h3>Laptop & Computer</h3></div>
+<div class="category"><div class="icon">🎧</div><h3>Electronics</h3></div>
+<div class="category"><div class="icon">📦</div><h3>Other Items</h3></div>
+</div>
+</section>
+
+<section id="products">
+<div class="title"><h2>Latest Products</h2><p>Recently added items</p></div>
+<div class="products">
+<div class="product"><div class="product-image">📱</div><div class="product-info"><h3>Smartphone</h3><p>Good condition mobile phone.</p><div class="price">Rs. 35,000</div><div class="location">📍 Mirpur Khas</div><a class="btn" href="https://wa.me/923192491861" target="_blank">Contact Seller</a></div></div>
+<div class="product"><div class="product-image">💻</div><div class="product-info"><h3>HP Laptop</h3><p>Used laptop in good condition.</p><div class="price">Rs. 75,000</div><div class="location">📍 Mirpur Khas</div><a class="btn" href="https://wa.me/923192491861" target="_blank">Contact Seller</a></div></div>
+<div class="product"><div class="product-image">🎧</div><div class="product-info"><h3>Headphones</h3><p>Good quality headphones.</p><div class="price">Rs. 4,000</div><div class="location">📍 Mirpur Khas</div><a class="btn" href="https://wa.me/923192491861" target="_blank">Contact Seller</a></div></div>
+<div class="product"><div class="product-image">🖥️</div><div class="product-info"><h3>Desktop Computer</h3><p>Computer for office and home.</p><div class="price">Rs. 55,000</div><div class="location">📍 Mirpur Khas</div><a class="btn" href="https://wa.me/923192491861" target="_blank">Contact Seller</a></div></div>
+</div>
+</section>
+
+<section class="sell" id="sell">
+<h2>Want to Sell Something?</h2><br>
+<p>Apna mobile, laptop, computer ya koi bhi item Noman Market par list karein.</p><br>
+<a href="sell.html" class="btn">+ Sell Your Item</a>
+</section>
+
+<section style="text-align:center">
+<div class="title"><h2>Contact Noman Market</h2></div>
+<p>📍 Johar Colony, Mirpur Khas</p><p>📞 03192491861</p><p>📧 nomanbhambhro33@gmail.com</p>
+</section>
+
+<footer><p>© 2026 Noman Market</p><p>Buy • Sell • Connect</p></footer>
+</body>
+</html>
