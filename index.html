@@ -3,102 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Noman Market - Buy & Sell</title>
+<title>Noman Market - Public Buy & Sell</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial,sans-serif
 }
 
 body{
   background:#f5f6f8;
-  color:#222;
+  color:#222
 }
 
 header{
   background:#172337;
-  color:white;
-  padding:16px 6%;
+  color:#fff;
+  padding:14px 5%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:20px;
+  gap:15px;
+  position:sticky;
+  top:0;
+  z-index:10
 }
 
 .logo{
-  font-size:26px;
-  font-weight:bold;
+  font-size:25px;
+  font-weight:bold
 }
 
 .logo span{
-  color:#00a8ff;
+  color:#00a8ff
+}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px
 }
 
 nav a{
-  color:white;
+  color:#fff;
   text-decoration:none;
-  margin-left:15px;
+  padding:8px 9px;
+  border-radius:5px
+}
+
+nav a:hover{
+  background:#263853
 }
 
 .hero{
   background:linear-gradient(135deg,#172337,#075985);
-  color:white;
+  color:#fff;
   text-align:center;
-  padding:65px 20px;
+  padding:55px 20px
 }
 
 .hero h1{
   font-size:40px;
-  margin-bottom:15px;
+  margin-bottom:12px
 }
 
 .hero h1 span{
-  color:#00a8ff;
+  color:#00a8ff
 }
 
 .hero p{
   font-size:18px;
-  margin-bottom:25px;
+  margin-bottom:20px
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:25px 15px
+}
+
+.section-title{
+  margin:10px 0 18px
 }
 
 .btn{
   background:#00a8ff;
-  color:white;
+  color:#fff;
   border:0;
-  padding:12px 20px;
+  padding:11px 18px;
   border-radius:7px;
   cursor:pointer;
   font-weight:bold;
   text-decoration:none;
   display:inline-block;
-  margin:4px;
+  margin:3px
 }
 
 .btn-danger{
-  background:#dc3545;
+  background:#dc3545
 }
 
 .btn-green{
-  background:#087f5b;
+  background:#087f5b
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 15px;
+.btn-dark{
+  background:#172337
 }
 
 .search{
-  background:white;
+  background:#fff;
   padding:15px;
   border-radius:10px;
-  display:flex;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr auto;
   gap:10px;
-  box-shadow:0 3px 15px #ddd;
+  box-shadow:0 3px 15px #ddd
 }
 
 input,select,textarea{
@@ -106,124 +128,163 @@ input,select,textarea{
   padding:12px;
   border:1px solid #ddd;
   border-radius:6px;
-  margin:6px 0;
+  margin:5px 0;
+  font-size:15px
 }
 
 textarea{
   min-height:100px;
-  resize:vertical;
+  resize:vertical
 }
 
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:25px;
+  gap:18px;
+  margin-top:22px
 }
 
 .card{
-  background:white;
+  background:#fff;
   border-radius:10px;
   padding:18px;
-  box-shadow:0 3px 12px #ddd;
+  box-shadow:0 3px 12px #ddd
 }
 
 .card h3{
   margin-bottom:8px;
+  word-break:break-word
 }
 
 .price{
   color:#087f5b;
   font-size:20px;
   font-weight:bold;
-  margin:10px 0;
+  margin:10px 0
 }
 
 .city{
   color:#777;
-  margin:8px 0;
+  margin:7px 0
 }
 
 .category{
   color:#075985;
   font-weight:bold;
-  margin:5px 0;
+  margin:7px 0
 }
 
-.form{
-  background:white;
-  padding:25px;
+.desc{
+  color:#555;
+  line-height:1.45;
+  white-space:pre-wrap
+}
+
+.contact{
+  margin-top:12px
+}
+
+.form-box{
+  background:#fff;
+  padding:22px;
   border-radius:10px;
-  max-width:600px;
-  margin:30px auto;
-  box-shadow:0 3px 15px #ddd;
+  box-shadow:0 3px 12px #ddd;
+  max-width:650px;
+  margin:25px auto
 }
 
-.admin{
-  background:#fff8e1;
-  border:2px solid #ffc107;
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
 }
 
-section{
-  margin-top:35px;
+.notice{
+  padding:12px;
+  border-radius:7px;
+  margin:10px 0;
+  background:#eef7ff;
+  color:#075985
+}
+
+.error{
+  background:#fff0f0;
+  color:#a00
+}
+
+.success{
+  background:#effbf3;
+  color:#087f5b
 }
 
 .hidden{
-  display:none;
-}
-
-.message{
-  margin-top:12px;
-  font-weight:bold;
-}
-
-.status{
-  background:#e8f5ff;
-  padding:12px;
-  border-radius:7px;
-  margin-top:10px;
+  display:none!important
 }
 
 footer{
-  background:#0d1624;
-  color:white;
+  background:#172337;
+  color:#fff;
   text-align:center;
   padding:25px;
-  margin-top:40px;
+  margin-top:30px
 }
 
-@media(max-width:800px){
+.status{
+  font-size:14px;
+  margin-top:8px;
+  color:#555
+}
 
+.empty{
+  padding:30px;
+  text-align:center;
+  background:#fff;
+  border-radius:10px;
+  color:#777
+}
+
+@media(max-width:850px){
   .products{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr)
   }
 
   .search{
-    flex-direction:column;
+    grid-template-columns:1fr 1fr
   }
 
-  header{
-    flex-direction:column;
+  .search button{
+    grid-column:span 2
   }
 }
 
-@media(max-width:500px){
-
-  .products{
-    grid-template-columns:1fr;
+@media(max-width:550px){
+  header{
+    align-items:flex-start;
+    flex-direction:column
   }
 
   .hero h1{
-    font-size:30px;
+    font-size:31px
   }
 
-  nav{
-    text-align:center;
+  .products{
+    grid-template-columns:1fr
+  }
+
+  .search{
+    grid-template-columns:1fr
+  }
+
+  .search button{
+    grid-column:auto
+  }
+
+  .row{
+    grid-template-columns:1fr
   }
 
   nav a{
-    display:inline-block;
-    margin:5px;
+    font-size:14px
   }
 }
 </style>
@@ -232,307 +293,275 @@ footer{
 <body>
 
 <header>
+  <div class="logo">Noman <span>Market</span></div>
 
-<div class="logo">
-Noman <span>Market</span>
-</div>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#sell">Sell</a>
-<a href="#account">Account</a>
-<a href="#admin" id="adminLink" class="hidden">Admin</a>
-</nav>
-
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#sell">Sell</a>
+    <a href="#account">Account</a>
+    <a href="#admin" id="adminNav" class="hidden">Admin</a>
+  </nav>
 </header>
 
-
 <section class="hero" id="home">
+  <h1>Welcome to <span>Noman Market</span></h1>
 
-<h1>
-Buy & Sell on <span>Noman Market</span>
-</h1>
+  <p>
+    Buy, sell and discover products & projects from people around you.
+  </p>
 
-<p>
-Mobile, Laptop, Electronics aur bohat kuch apne city mein buy aur sell karein.
-</p>
+  <a class="btn" href="#products">
+    Browse Products
+  </a>
 
-<button class="btn" onclick="openSell()">
-+ Sell an Item
-</button>
-
+  <a class="btn btn-green" href="#sell">
+    Sell Your Product
+  </a>
 </section>
 
-
-<div class="container">
-
-
-<!-- SEARCH -->
-
-<div class="search">
-
-<input
-id="search"
-type="text"
-placeholder="Search product..."
-oninput="loadProducts()">
-
-<select
-id="city"
-onchange="loadProducts()">
-
-<option value="">All Cities</option>
-<option>Mirpur Khas</option>
-<option>Hyderabad</option>
-<option>Karachi</option>
-<option>Other</option>
-
-</select>
-
-<select
-id="categoryFilter"
-onchange="loadProducts()">
-
-<option value="">All Categories</option>
-<option>Mobile</option>
-<option>Laptop & Computer</option>
-<option>Electronics</option>
-<option>Other Items</option>
-
-</select>
-
-</div>
-
-
-<!-- PRODUCTS -->
+<main class="container">
 
 <section id="products">
 
-<h2>Latest Products</h2>
+  <h2 class="section-title">
+    Products & Projects
+  </h2>
 
-<p style="margin-top:8px;color:#777">
-Noman Market users ke products
-</p>
+  <div class="search">
 
-<div
-class="products"
-id="productList">
+    <input
+      id="searchInput"
+      placeholder="Search product or project..."
+    >
 
-<p>Products loading...</p>
+    <select id="cityFilter">
+      <option value="">All Cities</option>
+    </select>
 
-</div>
+    <select id="categoryFilter">
 
-</section>
+      <option value="">
+        All Categories
+      </option>
 
+      <option>Electronics</option>
+      <option>Computers</option>
+      <option>Mobiles</option>
+      <option>Vehicles</option>
+      <option>Property</option>
+      <option>Clothes</option>
+      <option>Home</option>
+      <option>Services</option>
+      <option>Projects</option>
+      <option>Other</option>
 
-<!-- SELL -->
+    </select>
 
-<section
-id="sell"
-class="hidden">
+    <button
+      class="btn btn-dark"
+      onclick="loadProducts()"
+    >
+      Search
+    </button>
 
-<div class="form">
+  </div>
 
-<h2>Sell Your Product</h2>
-
-<p style="margin:10px 0;color:#666">
-Login karke apni product publish karein.
-</p>
-
-<input
-id="pname"
-placeholder="Product name">
-
-<input
-id="price"
-type="number"
-placeholder="Price (Rs.)">
-
-<select id="pcity">
-
-<option value="">
-Select City
-</option>
-
-<option>Mirpur Khas</option>
-<option>Hyderabad</option>
-<option>Karachi</option>
-<option>Other</option>
-
-</select>
-
-<select id="category">
-
-<option>Mobile</option>
-<option>Laptop & Computer</option>
-<option>Electronics</option>
-<option>Other Items</option>
-
-</select>
-
-<textarea
-id="description"
-placeholder="Product description">
-</textarea>
-
-<input
-id="phone"
-placeholder="Contact number e.g. 03123456789">
-
-<button
-class="btn"
-onclick="addProduct()">
-
-Publish Product
-
-</button>
-
-<p
-id="productMessage"
-class="message">
-</p>
-
-</div>
+  <div
+    id="productsList"
+    class="products"
+  >
+    <div class="empty">
+      Loading products...
+    </div>
+  </div>
 
 </section>
 
+<section id="sell" class="form-box">
 
-<!-- ACCOUNT -->
+  <h2>
+    Sell Your Product / Project
+  </h2>
 
-<section id="account">
+  <div id="sellMessage" class="notice">
+    Please create an account or login before posting.
+  </div>
 
-<div class="form">
+  <form id="sellForm">
 
-<h2>My Account</h2>
+    <input
+      id="productName"
+      placeholder="Product / Project name"
+      required
+    >
 
-<input
-id="email"
-type="email"
-placeholder="Your Gmail / Email">
+    <div class="row">
 
-<input
-id="password"
-type="password"
-placeholder="Password (6+ characters)">
+      <input
+        id="price"
+        type="number"
+        min="0"
+        placeholder="Price (PKR)"
+        required
+      >
 
-<button
-class="btn"
-onclick="signup()">
+      <select id="category" required>
 
-Create Account
+        <option value="">
+          Select category
+        </option>
 
-</button>
+        <option>Electronics</option>
+        <option>Computers</option>
+        <option>Mobiles</option>
+        <option>Vehicles</option>
+        <option>Property</option>
+        <option>Clothes</option>
+        <option>Home</option>
+        <option>Services</option>
+        <option>Projects</option>
+        <option>Other</option>
 
-<button
-class="btn"
-onclick="login()">
+      </select>
 
-Login
+    </div>
 
-</button>
+    <div class="row">
 
-<button
-class="btn btn-danger"
-onclick="logout()">
+      <input
+        id="city"
+        placeholder="City"
+        required
+      >
 
-Logout
+      <input
+        id="district"
+        placeholder="District"
+        required
+      >
 
-</button>
+    </div>
 
-<div
-id="authMessage"
-class="message">
+    <textarea
+      id="description"
+      placeholder="Describe your product or project..."
+      required
+    ></textarea>
 
-Account login nahi hai.
+    <input
+      id="phone"
+      type="tel"
+      placeholder="WhatsApp / Contact number"
+      required
+    >
 
-</div>
+    <button
+      class="btn btn-green"
+      type="submit"
+    >
+      Publish Product
+    </button>
 
-</div>
+  </form>
 
 </section>
 
+<section id="account" class="form-box">
 
-<!-- ADMIN -->
+  <h2>
+    Account
+  </h2>
 
-<section
-id="admin"
-class="hidden">
+  <div id="authMessage" class="notice">
+    Not logged in.
+  </div>
 
-<div class="form admin">
+  <input
+    id="email"
+    type="email"
+    placeholder="Email address"
+  >
 
-<h2>👨‍💼 Noman Market Admin</h2>
+  <input
+    id="password"
+    type="password"
+    placeholder="Password (minimum 6 characters)"
+  >
 
-<p style="margin:10px 0">
-Yahan se aap products manage kar sakte hain.
-</p>
+  <button
+    class="btn btn-green"
+    onclick="signup()"
+  >
+    Create Account
+  </button>
 
-<div
-id="adminStatus"
-class="status">
+  <button
+    class="btn"
+    onclick="login()"
+  >
+    Login
+  </button>
 
-Admin checking...
+  <button
+    class="btn btn-danger"
+    onclick="logout()"
+  >
+    Logout
+  </button>
 
-</div>
-
-<div
-id="adminProducts"
-style="margin-top:20px">
-
-</div>
-
-</div>
+  <div id="userStatus" class="status"></div>
 
 </section>
 
+<section id="admin" class="form-box hidden">
 
-</div>
+  <h2>
+    Admin Panel
+  </h2>
 
+  <div class="notice">
+    Admin: nomanbhambhro33@gmail.com
+  </div>
+
+  <div id="adminList"></div>
+
+</section>
+
+</main>
 
 <footer>
 
-<p>© 2026 Noman Market</p>
+  <p>
+    <strong>Noman Market</strong>
+    — Public Buy & Sell Marketplace
+  </p>
 
-<p>Buy • Sell • Connect</p>
+  <p style="margin-top:8px">
+    Post your product or project and connect with buyers.
+  </p>
 
 </footer>
-
-
 <script type="module">
-
-/* =========================
-   FIREBASE IMPORTS
-========================= */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 
 import {
-initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-
-
-import {
-getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-signOut,
-onAuthStateChanged
-}
-from
-"https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 import {
-getFirestore,
-collection,
-addDoc,
-getDocs,
-doc,
-deleteDoc,
-updateDoc
-}
-from
-"https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
 
 /* =========================
@@ -540,130 +569,171 @@ from
 ========================= */
 
 const firebaseConfig = {
-
-apiKey:
-"AIzaSyC1A4MjmK4onvPzM7w01-75cCcPsxX20c",
-
-authDomain:
-"noman-market.firebaseapp.com",
-
-projectId:
-"noman-market",
-
-storageBucket:
-"noman-market.firebasestorage.app",
-
-messagingSenderId:
-"201758887498",
-
-appId:
-"1:201758887498:web:ec54742fba41d27c81e0b3",
-
-measurementId:
-"G-PVDK8J1V5X"
-
+  apiKey: "AIzaSyC1A4MjmK4onvPzM7M1w01-75cCcPsxX20c",
+  authDomain: "noman-market.firebaseapp.com",
+  projectId: "noman-market",
+  storageBucket: "noman-market.firebasestorage.app",
+  messagingSenderId: "201758887498",
+  appId: "1:201758887498:web:28ec3d03b9b6c79c81e0b3",
+  measurementId: "G-FLWZ4FYZGR"
 };
-
-
-const app =
-initializeApp(firebaseConfig);
-
-const auth =
-getAuth(app);
-
-const db =
-getFirestore(app);
 
 
 /* =========================
    ADMIN EMAIL
 ========================= */
 
-/*
-IMPORTANT:
-
-Yahan apna Firebase account
-wala email likhein.
-
-Example:
-
-const ADMIN_EMAIL = "yourgmail@gmail.com";
-
-Password yahan KABHI na likhein.
-*/
-
-const ADMIN_EMAIL =
-"YOUR_ADMIN_EMAIL@gmail.com";
+const ADMIN_EMAIL = "nomanbhambhro33@gmail.com";
 
 
 /* =========================
-   ACCOUNT SIGNUP
+   START FIREBASE
 ========================= */
 
-window.signup =
-async function(){
+const app = initializeApp(firebaseConfig);
 
-const email =
-document
-.getElementById("email")
-.value
-.trim();
+const auth = getAuth(app);
 
-const password =
-document
-.getElementById("password")
-.value;
+const db = getFirestore(app);
 
 
-if(!email || !password){
+/* =========================
+   SHORT FUNCTION
+========================= */
 
-document
-.getElementById("authMessage")
-.innerText =
-"❌ Email aur password likhein.";
+const $ = id => document.getElementById(id);
 
-return;
+
+/* =========================
+   PRODUCTS ARRAY
+========================= */
+
+let allProducts = [];
+
+
+/* =========================
+   SECURITY HTML
+========================= */
+
+function escapeHTML(value){
+
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+
+}
+
+
+/* =========================
+   PHONE CLEAN
+========================= */
+
+function cleanPhone(phone){
+
+  return String(phone || "")
+    .replace(/[^\d]/g,"");
 
 }
 
 
-if(password.length < 6){
+/* =========================
+   FIREBASE ERROR
+========================= */
 
-document
-.getElementById("authMessage")
-.innerText =
-"❌ Password kam az kam 6 characters ka hona chahiye.";
+function firebaseError(e){
 
-return;
+  const code = e?.code || "";
+
+  if(code.includes("auth/api-key-not-valid"))
+    return "Firebase API key invalid hai. Firebase config check karein.";
+
+  if(code.includes("auth/email-already-in-use"))
+    return "Ye email pehle se registered hai. Login karein.";
+
+  if(
+    code.includes("auth/invalid-credential") ||
+    code.includes("auth/wrong-password")
+  )
+    return "Email ya password ghalat hai.";
+
+  if(code.includes("auth/weak-password"))
+    return "Password kam az kam 6 characters ka hona chahiye.";
+
+  if(code.includes("auth/invalid-email"))
+    return "Email address sahi enter karein.";
+
+  if(code.includes("permission-denied"))
+    return "Firestore permission denied hai. Firebase Rules check karein.";
+
+  return e?.message || "Kuch error aa gaya.";
+
+}
+
+
+/* =========================
+   AUTH MESSAGE
+========================= */
+
+function showAuth(msg,error){
+
+  $("authMessage").textContent = msg;
+
+  $("authMessage").className =
+    "notice " + (error ? "error" : "success");
 
 }
 
 
-try{
+/* =========================
+   CREATE ACCOUNT
+========================= */
 
-await
-createUserWithEmailAndPassword(
-auth,
-email,
-password
-);
+window.signup = async function(){
 
+  const email =
+    $("email").value.trim();
 
-document
-.getElementById("authMessage")
-.innerText =
-"✅ Account successfully create ho gaya.";
+  const password =
+    $("password").value;
 
-}catch(error){
+  if(!email || !password){
 
-console.error(error);
+    showAuth(
+      "Email aur password enter karein.",
+      true
+    );
 
-document
-.getElementById("authMessage")
-.innerText =
-"❌ " + error.message;
+    return;
+  }
 
-}
+  try{
+
+    await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    showAuth(
+      "Account successfully create ho gaya.",
+      false
+    );
+
+  }catch(e){
+
+    showAuth(
+      firebaseError(e),
+      true
+    );
+
+  }
 
 };
 
@@ -672,58 +742,45 @@ document
    LOGIN
 ========================= */
 
-window.login =
-async function(){
+window.login = async function(){
 
-const email =
-document
-.getElementById("email")
-.value
-.trim();
+  const email =
+    $("email").value.trim();
 
-const password =
-document
-.getElementById("password")
-.value;
+  const password =
+    $("password").value;
 
+  if(!email || !password){
 
-if(!email || !password){
+    showAuth(
+      "Email aur password enter karein.",
+      true
+    );
 
-document
-.getElementById("authMessage")
-.innerText =
-"❌ Email aur password likhein.";
+    return;
+  }
 
-return;
+  try{
 
-}
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
+    showAuth(
+      "Login successful.",
+      false
+    );
 
-try{
+  }catch(e){
 
-await
-signInWithEmailAndPassword(
-auth,
-email,
-password
-);
+    showAuth(
+      firebaseError(e),
+      true
+    );
 
-
-document
-.getElementById("authMessage")
-.innerText =
-"✅ Login successful.";
-
-}catch(error){
-
-console.error(error);
-
-document
-.getElementById("authMessage")
-.innerText =
-"❌ Email ya password ghalat hai.";
-
-}
+  }
 
 };
 
@@ -732,465 +789,425 @@ document
    LOGOUT
 ========================= */
 
-window.logout =
-async function(){
+window.logout = async function(){
 
-try{
+  try{
 
-await signOut(auth);
+    await signOut(auth);
 
-document
-.getElementById("authMessage")
-.innerText =
-"✅ Logout successful.";
+    showAuth(
+      "Logout ho gaya.",
+      false
+    );
 
-}catch(error){
+  }catch(e){
 
-console.error(error);
+    showAuth(
+      firebaseError(e),
+      true
+    );
 
-}
+  }
 
 };
 
 
 /* =========================
-   USER STATUS
+   LOGIN STATUS
 ========================= */
 
-onAuthStateChanged(
-auth,
-(user)=>{
+onAuthStateChanged(auth,user => {
 
-if(user){
+  const logged = !!user;
 
-document
-.getElementById("authMessage")
-.innerText =
-"✅ Login: " + user.email;
+  $("userStatus").textContent =
+    logged
+      ? "Logged in: " + user.email
+      : "Not logged in";
 
 
-/* ADMIN */
-
-if(
-user.email.toLowerCase()
-===
-ADMIN_EMAIL.toLowerCase()
-){
-
-document
-.getElementById("adminLink")
-.classList
-.remove("hidden");
-
-document
-.getElementById("admin")
-.classList
-.remove("hidden");
-
-document
-.getElementById("adminStatus")
-.innerText =
-"✅ Admin login successful.";
-
-loadAdminProducts();
-
-}else{
-
-document
-.getElementById("adminLink")
-.classList
-.add("hidden");
-
-document
-.getElementById("admin")
-.classList
-.add("hidden");
-
-}
-
-}else{
-
-document
-.getElementById("authMessage")
-.innerText =
-"Account login nahi hai.";
-
-document
-.getElementById("adminLink")
-.classList
-.add("hidden");
-
-document
-.getElementById("admin")
-.classList
-.add("hidden");
-
-}
-
-}
-);
+  $("sellMessage").textContent =
+    logged
+      ? "Aap logged in hain. Apna product/project publish kar sakte hain."
+      : "Please create an account ya login karein.";
 
 
-/* =========================
-   OPEN SELL
-========================= */
+  $("sellMessage").className =
+    "notice " + (logged ? "success" : "");
 
-window.openSell =
-function(){
 
-document
-.getElementById("sell")
-.classList
-.remove("hidden");
+  const admin =
+    logged &&
+    user.email.toLowerCase() ===
+    ADMIN_EMAIL.toLowerCase();
 
-document
-.getElementById("sell")
-.scrollIntoView({
-behavior:"smooth"
+
+  $("adminNav").classList.toggle(
+    "hidden",
+    !admin
+  );
+
+
+  $("admin").classList.toggle(
+    "hidden",
+    !admin
+  );
+
+
+  if(admin){
+
+    loadAdminProducts();
+
+  }
+
+
+  loadProducts();
+
 });
 
-};
-
 
 /* =========================
-   ADD PRODUCT
+   SELL PRODUCT
 ========================= */
 
-window.addProduct =
-async function(){
+$("sellForm").addEventListener(
+  "submit",
+  async e => {
 
-const user =
-auth.currentUser;
+    e.preventDefault();
 
 
-if(!user){
+    const user = auth.currentUser;
 
-alert(
-"Pehle Account create karke Login karein."
+
+    if(!user){
+
+      alert(
+        "Pehle account create/login karein."
+      );
+
+      return;
+    }
+
+
+    const product = {
+
+      name:
+        $("productName").value.trim(),
+
+      price:
+        Number($("price").value),
+
+      category:
+        $("category").value,
+
+      city:
+        $("city").value.trim(),
+
+      district:
+        $("district").value.trim(),
+
+      description:
+        $("description").value.trim(),
+
+      phone:
+        $("phone").value.trim(),
+
+      sellerEmail:
+        user.email,
+
+      sellerId:
+        user.uid,
+
+      createdAt:
+        serverTimestamp()
+
+    };
+
+
+    try{
+
+      await addDoc(
+        collection(db,"products"),
+        product
+      );
+
+
+      alert(
+        "Product/project successfully publish ho gaya!"
+      );
+
+
+      $("sellForm").reset();
+
+
+      await loadProducts();
+
+
+    }catch(e){
+
+      alert(
+        firebaseError(e)
+      );
+
+    }
+
+  }
 );
-
-document
-.getElementById("account")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-return;
-
-}
-
-
-const name =
-document
-.getElementById("pname")
-.value
-.trim();
-
-const price =
-document
-.getElementById("price")
-.value;
-
-const city =
-document
-.getElementById("pcity")
-.value;
-
-const category =
-document
-.getElementById("category")
-.value;
-
-const description =
-document
-.getElementById("description")
-.value
-.trim();
-
-const phone =
-document
-.getElementById("phone")
-.value
-.trim();
-
-
-if(
-!name ||
-!price ||
-!city ||
-!phone
-){
-
-document
-.getElementById("productMessage")
-.innerText =
-"❌ Product name, price, city aur phone zaroori hain.";
-
-return;
-
-}
-
-
-try{
-
-await addDoc(
-collection(db,"products"),
-{
-
-name:name,
-
-price:Number(price),
-
-city:city,
-
-category:category,
-
-description:description,
-
-phone:phone,
-
-sellerEmail:user.email,
-
-sellerId:user.uid,
-
-createdAt:Date.now()
-
-}
-);
-
-
-document
-.getElementById("productMessage")
-.innerText =
-"✅ Product publish ho gaya!";
-
-
-document
-.getElementById("pname")
-.value="";
-
-document
-.getElementById("price")
-.value="";
-
-document
-.getElementById("description")
-.value="";
-
-document
-.getElementById("phone")
-.value="";
-
-
-loadProducts();
-
-
-}catch(error){
-
-console.error(error);
-
-document
-.getElementById("productMessage")
-.innerText =
-"❌ Product save nahi hua.";
-
-}
-
-};
 
 
 /* =========================
    LOAD PRODUCTS
 ========================= */
 
-window.loadProducts =
-async function(){
+window.loadProducts = async function(){
 
-const list =
-document
-.getElementById("productList");
+  try{
 
+    const snap =
+      await getDocs(
+        collection(db,"products")
+      );
 
-list.innerHTML =
-"<p>Products loading...</p>";
 
+    allProducts =
+      snap.docs.map(
+        d => ({
+          id:d.id,
+          ...d.data()
+        })
+      );
 
-const search =
-document
-.getElementById("search")
-.value
-.toLowerCase()
-.trim();
 
+    renderProducts();
 
-const selectedCity =
-document
-.getElementById("city")
-.value;
+    updateCities();
 
 
-const selectedCategory =
-document
-.getElementById("categoryFilter")
-.value;
+  }catch(e){
 
+    $("productsList").innerHTML =
+      `
+      <div class="empty">
+        Products load nahi ho rahe.
+        Firebase Firestore Rules check karein.
+      </div>
+      `;
 
-try{
-
-const snapshot =
-await getDocs(
-collection(db,"products")
-);
-
-
-list.innerHTML="";
-
-let found=0;
-
-
-snapshot.forEach(
-(docSnap)=>{
-
-const p =
-docSnap.data();
-
-
-const productName =
-(p.name || "")
-.toLowerCase();
-
-
-const description =
-(p.description || "")
-.toLowerCase();
-
-
-if(
-search &&
-!productName.includes(search) &&
-!description.includes(search)
-){
-
-return;
-
-}
-
-
-if(
-selectedCity &&
-p.city !== selectedCity
-){
-
-return;
-
-}
-
-
-if(
-selectedCategory &&
-p.category !== selectedCategory
-){
-
-return;
-
-}
-
-
-found++;
-
-
-const card =
-document
-.createElement("div");
-
-card.className="card";
-
-
-let whatsappNumber =
-(p.phone || "")
-.replace(/\D/g,"");
-
-
-if(
-whatsappNumber
-.startsWith("0")
-){
-
-whatsappNumber =
-"92" +
-whatsappNumber
-.substring(1);
-
-}
-
-
-card.innerHTML = `
-
-<h3>
-${escapeHTML(
-p.name || "Product"
-)}
-</h3>
-
-<div class="category">
-${escapeHTML(
-p.category || ""
-)}
-</div>
-
-<div class="price">
-Rs. ${Number(
-p.price || 0
-).toLocaleString()}
-</div>
-
-<p>
-${escapeHTML(
-p.description || ""
-)}
-</p>
-
-<div class="city">
-📍 ${escapeHTML(
-p.city || ""
-)}
-</div>
-
-<a
-class="btn"
-href="https://wa.me/${whatsappNumber}"
-target="_blank">
-
-📞 Contact Seller
-
-</a>
-
-`;
-
-list.appendChild(card);
-
-}
-);
-
-
-if(found===0){
-
-list.innerHTML =
-"<p>Abhi koi product nahi mila.</p>";
-
-}
-
-
-}catch(error){
-
-console.error(error);
-
-list.innerHTML =
-"<p>Products load nahi ho rahe.</p>";
-
-}
+  }
 
 };
+
+
+/* =========================
+   SHOW PRODUCTS
+========================= */
+
+function renderProducts(){
+
+  const search =
+    $("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const city =
+    $("cityFilter").value;
+
+
+  const category =
+    $("categoryFilter").value;
+
+
+  const filtered =
+    allProducts.filter(p => {
+
+      const text =
+        `${p.name || ""}
+         ${p.description || ""}
+         ${p.district || ""}`
+        .toLowerCase();
+
+
+      return (
+
+        (!search ||
+          text.includes(search))
+
+        &&
+
+        (!city ||
+          p.city === city)
+
+        &&
+
+        (!category ||
+          p.category === category)
+
+      );
+
+    });
+
+
+  if(!filtered.length){
+
+    $("productsList").innerHTML =
+      `
+      <div class="empty">
+        Abhi koi matching
+        product/project nahi mila.
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  $("productsList").innerHTML =
+    filtered.map(p => {
+
+      const phone =
+        cleanPhone(p.phone);
+
+
+      const wa =
+        phone
+        ? `https://wa.me/${phone}?text=${
+            encodeURIComponent(
+              "Noman Market par aapke product/project ke bare mein contact kar raha hun: "
+              +
+              (p.name || "Product")
+            )
+          }`
+        : "";
+
+
+      return `
+      <article class="card">
+
+        <h3>
+          ${escapeHTML(p.name)}
+        </h3>
+
+        <div class="price">
+          PKR
+          ${Number(
+            p.price || 0
+          ).toLocaleString()}
+        </div>
+
+        <div class="category">
+          ${escapeHTML(p.category)}
+        </div>
+
+        <div class="city">
+          📍
+          ${escapeHTML(p.city)}
+          ${
+            p.district
+              ? ", " +
+                escapeHTML(p.district)
+              : ""
+          }
+        </div>
+
+        <p class="desc">
+          ${escapeHTML(p.description)}
+        </p>
+
+        <div class="contact">
+
+          ${
+            wa
+              ? `
+              <a
+                class="btn btn-green"
+                href="${wa}"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp Seller
+              </a>
+              `
+              : ""
+          }
+
+          <a
+            class="btn"
+            href="tel:${escapeHTML(p.phone)}"
+          >
+            Call
+          </a>
+
+        </div>
+
+      </article>
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================
+   CITY FILTER
+========================= */
+
+function updateCities(){
+
+  const current =
+    $("cityFilter").value;
+
+
+  const cities =
+    [
+      ...new Set(
+        allProducts
+          .map(p => p.city)
+          .filter(Boolean)
+      )
+    ].sort();
+
+
+  $("cityFilter").innerHTML =
+    '<option value="">All Cities</option>' +
+
+    cities
+      .map(
+        c =>
+          `<option value="${escapeHTML(c)}">
+            ${escapeHTML(c)}
+          </option>`
+      )
+      .join("");
+
+
+  $("cityFilter").value =
+    cities.includes(current)
+      ? current
+      : "";
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+[
+  "searchInput",
+  "cityFilter",
+  "categoryFilter"
+].forEach(id => {
+
+  $(id).addEventListener(
+    "input",
+    renderProducts
+  );
+
+});
 
 
 /* =========================
@@ -1199,206 +1216,154 @@ list.innerHTML =
 
 async function loadAdminProducts(){
 
-const box =
-document
-.getElementById("adminProducts");
+  if(
+    !auth.currentUser ||
+    auth.currentUser.email.toLowerCase()
+      !== ADMIN_EMAIL.toLowerCase()
+  ){
 
+    return;
 
-box.innerHTML =
-"<p>Admin products loading...</p>";
+  }
 
 
-try{
+  try{
 
-const snapshot =
-await getDocs(
-collection(db,"products")
-);
+    const snap =
+      await getDocs(
+        collection(db,"products")
+      );
 
 
-box.innerHTML="";
+    const items =
+      snap.docs.map(
+        d => ({
+          id:d.id,
+          ...d.data()
+        })
+      );
 
 
-if(snapshot.empty){
+    $("adminList").innerHTML =
+      items.length
 
-box.innerHTML =
-"<p>Abhi koi product nahi hai.</p>";
+      ?
 
-return;
+      items.map(p => `
 
-}
+        <div
+          class="card"
+          style="margin:10px 0"
+        >
 
+          <strong>
+            ${escapeHTML(p.name)}
+          </strong>
 
-snapshot.forEach(
-(docSnap)=>{
+          <div>
+            ${escapeHTML(p.city)}
+            —
+            PKR
+            ${Number(
+              p.price || 0
+            ).toLocaleString()}
+          </div>
 
-const p =
-docSnap.data();
+          <div>
+            ${escapeHTML(
+              p.sellerEmail
+            )}
+          </div>
 
-const id =
-docSnap.id;
+          <button
+            class="btn btn-danger"
+            onclick="deleteProduct('${p.id}')"
+          >
+            Delete
+          </button>
 
+        </div>
 
-const item =
-document
-.createElement("div");
+      `).join("")
 
+      :
 
-item.style =
-"background:white;padding:15px;margin:10px 0;border-radius:8px;border:1px solid #ddd";
+      "<p>No products yet.</p>";
 
 
-item.innerHTML = `
+  }catch(e){
 
-<h3>
-${escapeHTML(
-p.name || "Product"
-)}
-</h3>
+    $("adminList").innerHTML =
+      `
+      <div class="notice error">
+        Admin products load nahi ho rahe.
+        Firestore Rules check karein.
+      </div>
+      `;
 
-<p>
-Rs. ${Number(
-p.price || 0
-).toLocaleString()}
-</p>
-
-<p>
-📍 ${escapeHTML(
-p.city || ""
-)}
-</p>
-
-<p>
-📞 ${escapeHTML(
-p.phone || ""
-)}
-</p>
-
-<p>
-👤 ${escapeHTML(
-p.sellerEmail || ""
-)}
-</p>
-
-<button
-class="btn btn-danger"
-data-id="${id}">
-
-Delete Product
-
-</button>
-
-`;
-
-const deleteButton =
-item.querySelector("button");
-
-
-deleteButton.onclick =
-async function(){
-
-const user =
-auth.currentUser;
-
-
-if(
-!user ||
-user.email.toLowerCase()
-!==
-ADMIN_EMAIL.toLowerCase()
-){
-
-alert(
-"Admin access required."
-);
-
-return;
-
-}
-
-
-if(
-!confirm(
-"Is product ko delete karna hai?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-await deleteDoc(
-doc(db,"products",id)
-);
-
-
-alert(
-"✅ Product delete ho gaya."
-);
-
-
-loadAdminProducts();
-
-loadProducts();
-
-
-}catch(error){
-
-console.error(error);
-
-alert(
-"❌ Delete nahi hua."
-);
-
-}
-
-};
-
-
-box.appendChild(item);
-
-}
-);
-
-
-}catch(error){
-
-console.error(error);
-
-box.innerHTML =
-"<p>Admin products load nahi ho rahe.</p>";
-
-}
+  }
 
 }
 
 
 /* =========================
-   SECURITY
+   DELETE PRODUCT
 ========================= */
 
-function escapeHTML(text){
+window.deleteProduct =
+  async function(id){
 
-return String(text)
+    if(
+      !auth.currentUser ||
+      auth.currentUser.email.toLowerCase()
+        !== ADMIN_EMAIL.toLowerCase()
+    ){
 
-.replace(/&/g,"&amp;")
+      return;
 
-.replace(/</g,"&lt;")
+    }
 
-.replace(/>/g,"&gt;")
 
-.replace(/"/g,"&quot;")
+    if(
+      !confirm(
+        "Is product ko delete karna hai?"
+      )
+    ){
 
-.replace(/'/g,"&#039;");
+      return;
 
-}
+    }
+
+
+    try{
+
+      await deleteDoc(
+        doc(
+          db,
+          "products",
+          id
+        )
+      );
+
+
+      await loadProducts();
+
+      await loadAdminProducts();
+
+
+    }catch(e){
+
+      alert(
+        firebaseError(e)
+      );
+
+    }
+
+  };
 
 
 /* =========================
-   START
+   FIRST LOAD
 ========================= */
 
 loadProducts();
@@ -1406,4 +1371,4 @@ loadProducts();
 </script>
 
 </body>
-  </html>
+</html>
