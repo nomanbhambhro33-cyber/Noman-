@@ -4,23 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Noman Bhambhro - Project Marketplace</title>
+<title>Noman Marketplace | Buy & Sell</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    background:#f4f7fb;
-    color:#1f2937;
+    background:#f3f6fa;
+    color:#172033;
 }
 
-/* HEADER */
+button{
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:#111827;
@@ -29,37 +44,47 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:20px;
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
 }
 
 .logo{
     font-size:23px;
     font-weight:bold;
+    white-space:nowrap;
 }
 
-nav{
+.logo span{
+    color:#38bdf8;
+}
+
+.nav{
     display:flex;
-    gap:10px;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
-nav button{
-    border:none;
-    padding:10px 15px;
+.nav button{
+    border:0;
     border-radius:7px;
-    cursor:pointer;
+    padding:10px 15px;
     background:#2563eb;
     color:white;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    background:linear-gradient(135deg,#111827,#2563eb);
+    background:
+    linear-gradient(135deg,#0f172a,#1d4ed8);
     color:white;
     text-align:center;
-    padding:70px 20px;
+    padding:70px 20px 90px;
 }
 
 .hero h1{
@@ -69,130 +94,182 @@ nav button{
 
 .hero p{
     font-size:18px;
+    margin-bottom:28px;
     opacity:.9;
-    margin-bottom:25px;
 }
 
 .hero button{
+    background:white;
+    color:#1d4ed8;
+    border:0;
     padding:14px 25px;
-    border:none;
     border-radius:8px;
-    background:white;
-    color:#2563eb;
     font-weight:bold;
-    cursor:pointer;
+    font-size:16px;
 }
 
-/* SEARCH */
 
-.search-area{
-    width:90%;
-    max-width:1000px;
-    margin:-25px auto 35px;
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box{
+    width:92%;
+    max-width:1100px;
+    margin:-35px auto 30px;
     background:white;
-    padding:20px;
+    padding:18px;
     border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    display:flex;
+    box-shadow:0 6px 25px rgba(0,0,0,.12);
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
     gap:10px;
+
+    position:relative;
+    z-index:5;
 }
 
-.search-area input,
-.search-area select{
+.search-box input,
+.search-box select{
+    width:100%;
     padding:13px;
-    border:1px solid #ddd;
+    border:1px solid #d5dbe5;
     border-radius:7px;
+    outline:none;
 }
 
-.search-area input{
-    flex:1;
-}
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-    width:90%;
-    max-width:1200px;
+    width:92%;
+    max-width:1250px;
     margin:auto;
 }
 
 .section-title{
-    margin-bottom:20px;
+    margin:25px 0 18px;
 }
 
-/* PROJECT GRID */
 
-.project-grid{
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
     display:grid;
     grid-template-columns:
-        repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-    padding-bottom:50px;
+    repeat(auto-fit,minmax(130px,1fr));
+    gap:12px;
+    margin-bottom:35px;
 }
 
-/* CARD */
-
-.project-card{
+.category-card{
     background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    padding:20px 10px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+    cursor:pointer;
     transition:.2s;
 }
 
-.project-card:hover{
-    transform:translateY(-5px);
+.category-card:hover{
+    transform:translateY(-4px);
 }
 
-.project-image{
+.category-icon{
+    font-size:30px;
+    display:block;
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   ITEMS GRID
+========================= */
+
+.items-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(260px,1fr));
+    gap:20px;
+    padding-bottom:60px;
+}
+
+
+/* =========================
+   ITEM CARD
+========================= */
+
+.item-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.item-card:hover{
+    transform:translateY(-4px);
+}
+
+.item-photo{
     width:100%;
-    height:180px;
+    height:200px;
     object-fit:cover;
     background:#e5e7eb;
 }
 
-.project-content{
-    padding:18px;
+.item-info{
+    padding:17px;
 }
 
-.project-content h3{
+.item-category{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:5px;
+    background:#dbeafe;
+    color:#1d4ed8;
+    font-size:12px;
     margin-bottom:8px;
 }
 
-.category{
-    display:inline-block;
-    background:#dbeafe;
-    color:#1d4ed8;
-    padding:5px 9px;
-    border-radius:5px;
-    font-size:12px;
-    margin-bottom:10px;
+.item-info h3{
+    margin-bottom:8px;
 }
 
-.description{
-    color:#666;
+.item-description{
+    color:#667085;
     line-height:1.5;
+    min-height:45px;
+}
+
+.item-price{
+    color:#16a34a;
+    font-size:21px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.item-location{
+    color:#667085;
     margin-bottom:12px;
 }
 
-.price{
-    font-size:20px;
-    font-weight:bold;
-    color:#16a34a;
-    margin-bottom:15px;
-}
-
-.card-buttons{
+.item-buttons{
     display:flex;
     gap:8px;
 }
 
-.card-buttons button{
+.item-buttons button{
     flex:1;
     padding:10px;
-    border:none;
+    border:0;
     border-radius:7px;
-    cursor:pointer;
 }
 
 .view-btn{
@@ -205,38 +282,46 @@ nav button{
     color:white;
 }
 
-/* MODAL */
+
+/* =========================
+   MODAL
+========================= */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.65);
+    z-index:2000;
+
     align-items:center;
     justify-content:center;
-    padding:20px;
-    z-index:200;
+
+    padding:15px;
 }
 
 .modal-box{
-    background:white;
     width:100%;
-    max-width:550px;
-    max-height:90vh;
+    max-width:650px;
+    max-height:92vh;
     overflow:auto;
+
+    background:white;
     border-radius:12px;
     padding:25px;
 }
 
-.modal-box h2{
-    margin-bottom:20px;
-}
-
 .close{
     float:right;
-    font-size:25px;
+    font-size:28px;
     cursor:pointer;
+    color:#555;
 }
+
+
+/* =========================
+   FORM
+========================= */
 
 .form-group{
     margin-bottom:15px;
@@ -253,54 +338,108 @@ nav button{
 .form-group select{
     width:100%;
     padding:11px;
-    border:1px solid #ccc;
+    border:1px solid #ccd3dd;
     border-radius:7px;
+    outline:none;
 }
 
 .form-group textarea{
-    min-height:100px;
+    min-height:90px;
     resize:vertical;
 }
 
-.submit-btn{
+.publish-btn{
     width:100%;
-    padding:13px;
-    border:none;
+    padding:14px;
+    border:0;
     border-radius:7px;
     background:#2563eb;
     color:white;
-    cursor:pointer;
     font-size:16px;
 }
 
-/* FOOTER */
+
+/* =========================
+   PHOTO PREVIEW
+========================= */
+
+#photoPreview{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.preview-image{
+    width:90px;
+    height:70px;
+    object-fit:cover;
+    border-radius:7px;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details-image{
+    width:100%;
+    max-height:350px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.details-price{
+    color:#16a34a;
+    font-size:25px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.details-text{
+    line-height:1.7;
+    margin:10px 0;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#111827;
     color:white;
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
+}
+
+footer h2{
+    margin-bottom:8px;
 }
 
 footer p{
+    color:#cbd5e1;
     margin:5px;
 }
 
-/* MOBILE */
 
-@media(max-width:700px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
 
     header{
         flex-direction:column;
-        gap:12px;
     }
 
     .hero h1{
         font-size:32px;
     }
 
-    .search-area{
-        flex-direction:column;
+    .search-box{
+        grid-template-columns:1fr;
     }
 
 }
@@ -312,87 +451,151 @@ footer p{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <div class="logo">
-        Noman Marketplace
+        Noman <span>Marketplace</span>
     </div>
 
-    <nav>
+    <div class="nav">
 
-        <button onclick="showHome()">
+        <button onclick="goHome()">
             Home
         </button>
 
-        <button onclick="openAddProject()">
-            + Sell Project
+        <button onclick="openSellModal()">
+            + Sell / Post
         </button>
 
-    </nav>
+    </div>
 
 </header>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
     <h1>
-        Buy & Sell Projects
+        Buy & Sell Anything
     </h1>
 
     <p>
-        Discover projects, showcase your work
-        and connect with project owners.
+        Mobile • Computer • Car • Motorcycle •
+        Property • Electronics • Projects & More
     </p>
 
-    <button onclick="openAddProject()">
-        Post Your Project
+    <button onclick="openSellModal()">
+        Post Your Item
     </button>
 
 </section>
 
 
-<!-- SEARCH -->
 
-<div class="search-area">
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-box">
 
     <input
-        type="text"
         id="searchInput"
-        placeholder="Search projects..."
-        oninput="filterProjects()"
+        type="text"
+        placeholder="🔎 Search mobile, car, laptop..."
+        oninput="filterItems()"
     >
 
     <select
         id="categoryFilter"
-        onchange="filterProjects()"
+        onchange="filterItems()"
     >
 
-        <option value="all">
+        <option value="All">
             All Categories
         </option>
 
-        <option value="Website">
-            Website
+        <option value="Mobile">
+            📱 Mobile
         </option>
 
-        <option value="Mobile App">
-            Mobile App
+        <option value="Computer">
+            💻 Computer
         </option>
 
-        <option value="Game">
-            Game
+        <option value="Car">
+            🚗 Car
         </option>
 
-        <option value="Software">
-            Software
+        <option value="Motorcycle">
+            🏍️ Motorcycle
+        </option>
+
+        <option value="Property">
+            🏠 Property
+        </option>
+
+        <option value="Electronics">
+            📺 Electronics
+        </option>
+
+        <option value="Furniture">
+            🪑 Furniture
+        </option>
+
+        <option value="Clothes">
+            👕 Clothes
+        </option>
+
+        <option value="Games">
+            🎮 Games
+        </option>
+
+        <option value="Projects">
+            💻 Projects
         </option>
 
         <option value="Other">
-            Other
+            📦 Other
+        </option>
+
+    </select>
+
+
+    <select
+        id="currencyFilter"
+        onchange="filterItems()"
+    >
+
+        <option value="All">
+            All Currency
+        </option>
+
+        <option value="PKR">
+            🇵🇰 PKR
+        </option>
+
+        <option value="USD">
+            🇺🇸 USD
+        </option>
+
+        <option value="AED">
+            🇦🇪 AED
+        </option>
+
+        <option value="GBP">
+            🇬🇧 GBP
+        </option>
+
+        <option value="EUR">
+            🇪🇺 EUR
         </option>
 
     </select>
@@ -400,90 +603,209 @@ footer p{
 </div>
 
 
-<!-- PROJECTS -->
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
+
     <h2 class="section-title">
-        Latest Projects
+        Categories
     </h2>
 
+
+    <div class="categories">
+
+        <div class="category-card"
+             onclick="selectCategory('Mobile')">
+            <span class="category-icon">📱</span>
+            Mobile
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Computer')">
+            <span class="category-icon">💻</span>
+            Computer
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Car')">
+            <span class="category-icon">🚗</span>
+            Cars
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Motorcycle')">
+            <span class="category-icon">🏍️</span>
+            Motorcycle
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Property')">
+            <span class="category-icon">🏠</span>
+            Property
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Electronics')">
+            <span class="category-icon">📺</span>
+            Electronics
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Furniture')">
+            <span class="category-icon">🪑</span>
+            Furniture
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Clothes')">
+            <span class="category-icon">👕</span>
+            Clothes
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Games')">
+            <span class="category-icon">🎮</span>
+            Games
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Projects')">
+            <span class="category-icon">💻</span>
+            Projects
+        </div>
+
+        <div class="category-card"
+             onclick="selectCategory('Other')">
+            <span class="category-icon">📦</span>
+            Other
+        </div>
+
+    </div>
+
+
+
+    <h2 class="section-title">
+        Latest Listings
+    </h2>
+
+
     <div
-        class="project-grid"
-        id="projectGrid"
+        class="items-grid"
+        id="itemsGrid"
     ></div>
+
 
 </div>
 
 
-<!-- ADD PROJECT MODAL -->
+
+<!-- =========================
+     SELL MODAL
+========================= -->
 
 <div
     class="modal"
-    id="addProjectModal"
+    id="sellModal"
 >
 
     <div class="modal-box">
 
         <span
             class="close"
-            onclick="closeModal('addProjectModal')"
+            onclick="closeModal('sellModal')"
         >
             ×
         </span>
 
         <h2>
-            Post Your Project
+            Sell / Post Your Item
         </h2>
 
+        <br>
+
+
         <form
-            onsubmit="addProject(event)"
+            onsubmit="publishItem(event)"
         >
+
 
             <div class="form-group">
 
                 <label>
-                    Project Name
+                    Item / Project Name *
                 </label>
 
                 <input
-                    id="projectName"
+                    id="itemName"
                     required
-                    placeholder="Example: Online Store Website"
+                    placeholder="Example: iPhone 15 Pro"
                 >
 
             </div>
 
 
+
             <div class="form-group">
 
                 <label>
-                    Category
+                    Category *
                 </label>
 
                 <select
-                    id="projectCategory"
+                    id="itemCategory"
                     required
                 >
 
-                    <option value="Website">
-                        Website
+                    <option value="">
+                        Select Category
                     </option>
 
-                    <option value="Mobile App">
-                        Mobile App
+                    <option value="Mobile">
+                        📱 Mobile
                     </option>
 
-                    <option value="Game">
-                        Game
+                    <option value="Computer">
+                        💻 Computer
                     </option>
 
-                    <option value="Software">
-                        Software
+                    <option value="Car">
+                        🚗 Car
+                    </option>
+
+                    <option value="Motorcycle">
+                        🏍️ Motorcycle
+                    </option>
+
+                    <option value="Property">
+                        🏠 Property
+                    </option>
+
+                    <option value="Electronics">
+                        📺 Electronics
+                    </option>
+
+                    <option value="Furniture">
+                        🪑 Furniture
+                    </option>
+
+                    <option value="Clothes">
+                        👕 Clothes
+                    </option>
+
+                    <option value="Games">
+                        🎮 Games
+                    </option>
+
+                    <option value="Projects">
+                        💻 Projects
                     </option>
 
                     <option value="Other">
-                        Other
+                        📦 Other
                     </option>
 
                 </select>
@@ -491,54 +813,158 @@ footer p{
             </div>
 
 
+
             <div class="form-group">
 
                 <label>
-                    Price
+                    Price *
                 </label>
 
                 <input
-                    id="projectPrice"
+                    id="itemPrice"
+                    type="number"
+                    min="0"
                     required
-                    placeholder="Example: $50"
+                    placeholder="Example: 150000"
                 >
 
             </div>
 
 
+
             <div class="form-group">
 
                 <label>
-                    Project Image URL
+                    Currency *
+                </label>
+
+                <select
+                    id="itemCurrency"
+                    required
+                >
+
+                    <option value="PKR">
+                        🇵🇰 PKR - Pakistani Rupee
+                    </option>
+
+                    <option value="USD">
+                        🇺🇸 USD - US Dollar
+                    </option>
+
+                    <option value="AED">
+                        🇦🇪 AED - UAE Dirham
+                    </option>
+
+                    <option value="GBP">
+                        🇬🇧 GBP - British Pound
+                    </option>
+
+                    <option value="EUR">
+                        🇪🇺 EUR - Euro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Photos *
                 </label>
 
                 <input
-                    id="projectImage"
-                    placeholder="https://example.com/image.jpg"
+                    id="itemPhotos"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    required
+                    onchange="previewPhotos(event)"
                 >
 
+                <div id="photoPreview"></div>
+
             </div>
+
 
 
             <div class="form-group">
 
                 <label>
-                    Description
+                    Country *
+                </label>
+
+                <input
+                    id="itemCountry"
+                    required
+                    placeholder="Pakistan"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    City *
+                </label>
+
+                <input
+                    id="itemCity"
+                    required
+                    placeholder="Karachi"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Area
+                </label>
+
+                <input
+                    id="itemArea"
+                    placeholder="Your Area"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Description *
                 </label>
 
                 <textarea
-                    id="projectDescription"
+                    id="itemDescription"
                     required
-                    placeholder="Describe your project..."
+                    placeholder="Write details about your item..."
                 ></textarea>
 
             </div>
 
 
+
+            <h3>
+                Seller Information
+            </h3>
+
+            <br>
+
+
+
             <div class="form-group">
 
                 <label>
-                    Seller Name
+                    Seller Name *
                 </label>
 
                 <input
@@ -550,20 +976,21 @@ footer p{
             </div>
 
 
+
             <div class="form-group">
 
                 <label>
-                    Contact Email
+                    Email
                 </label>
 
                 <input
                     id="sellerEmail"
                     type="email"
-                    required
                     placeholder="your@email.com"
                 >
 
             </div>
+
 
 
             <div class="form-group">
@@ -580,12 +1007,14 @@ footer p{
             </div>
 
 
+
             <button
-                class="submit-btn"
+                class="publish-btn"
                 type="submit"
             >
-                Publish Project
+                🚀 Publish Listing
             </button>
+
 
         </form>
 
@@ -594,7 +1023,10 @@ footer p{
 </div>
 
 
-<!-- PROJECT DETAILS MODAL -->
+
+<!-- =========================
+     DETAILS MODAL
+========================= -->
 
 <div
     class="modal"
@@ -610,23 +1042,31 @@ footer p{
             ×
         </span>
 
-        <div id="projectDetails"></div>
+        <div id="detailsContent"></div>
 
     </div>
 
 </div>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <h3>
-        Noman Bhambhro Website
-    </h3>
+    <h2>
+        Noman Bhambhro Marketplace
+    </h2>
 
     <p>
-        Buy • Sell • Discover Projects
+        Buy • Sell • Discover
+    </p>
+
+    <p>
+        Mobile • Cars • Motorcycles •
+        Computers • Property • Projects & More
     </p>
 
     <p>
@@ -640,72 +1080,140 @@ footer p{
 <script>
 
 
-/* DEFAULT PROJECTS */
+/* =========================
+   DEFAULT LISTINGS
+========================= */
 
-let projects = [
+let listings = [
 
     {
-        name:"Professional Portfolio Website",
-        category:"Website",
-        price:"$50",
-        image:"https://images.unsplash.com/photo-1467232004584-a241de8bcf5d",
-        description:"A modern responsive portfolio website for developers and designers.",
+        name:"iPhone 15 Pro",
+        category:"Mobile",
+        price:"250000",
+        currency:"PKR",
+        image:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
+        country:"Pakistan",
+        city:"Karachi",
+        area:"Gulshan",
+        description:"iPhone in excellent condition.",
         seller:"Demo Seller",
         email:"demo@example.com",
         whatsapp:""
     },
 
     {
-        name:"Car Racing Game",
-        category:"Game",
-        price:"$80",
-        image:"https://images.unsplash.com/photo-1503736334956-4c8f8e92946d",
-        description:"A simple racing game project that can be customized.",
-        seller:"Game Developer",
-        email:"game@example.com",
+        name:"Gaming Laptop",
+        category:"Computer",
+        price:"1200",
+        currency:"USD",
+        image:"https://images.unsplash.com/photo-1603302576837-37561b2e2302",
+        country:"Pakistan",
+        city:"Lahore",
+        area:"DHA",
+        description:"Powerful gaming laptop.",
+        seller:"Computer Seller",
+        email:"computer@example.com",
         whatsapp:""
     },
 
     {
-        name:"Mobile App Project",
-        category:"Mobile App",
-        price:"$100",
-        image:"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",
-        description:"Mobile application project for a startup idea.",
-        seller:"App Developer",
-        email:"app@example.com",
+        name:"Toyota Corolla",
+        category:"Car",
+        price:"3500000",
+        currency:"PKR",
+        image:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2",
+        country:"Pakistan",
+        city:"Islamabad",
+        area:"F-10",
+        description:"Toyota Corolla in good condition.",
+        seller:"Car Seller",
+        email:"car@example.com",
+        whatsapp:""
+    },
+
+    {
+        name:"Sports Motorcycle",
+        category:"Motorcycle",
+        price:"5000",
+        currency:"USD",
+        image:"https://images.unsplash.com/photo-1558981806-ec527fa84c39",
+        country:"UAE",
+        city:"Dubai",
+        area:"Deira",
+        description:"Sports motorcycle for sale.",
+        seller:"Bike Seller",
+        email:"bike@example.com",
+        whatsapp:""
+    },
+
+    {
+        name:"Website Project",
+        category:"Projects",
+        price:"100",
+        currency:"USD",
+        image:"https://images.unsplash.com/photo-1467232004584-a241de8bcf5d",
+        country:"Pakistan",
+        city:"Hyderabad",
+        area:"City",
+        description:"Professional website project.",
+        seller:"Developer",
+        email:"developer@example.com",
         whatsapp:""
     }
 
 ];
 
 
-/* LOAD SAVED PROJECTS */
 
-const savedProjects =
-    localStorage.getItem("nomanProjects");
+/* =========================
+   LOAD LOCAL DATA
+========================= */
 
-if(savedProjects){
+const saved =
+    localStorage.getItem("nomanMarketplaceListings");
 
-    projects =
-        JSON.parse(savedProjects);
+if(saved){
+
+    try{
+
+        listings =
+            JSON.parse(saved);
+
+    }catch(error){
+
+        console.log("Saved data error");
+
+    }
 
 }
 
 
-/* DISPLAY PROJECTS */
 
-function displayProjects(list){
+/* =========================
+   DISPLAY
+========================= */
+
+function displayListings(list){
 
     const grid =
-        document.getElementById("projectGrid");
+        document.getElementById("itemsGrid");
 
     grid.innerHTML="";
+
 
     if(list.length===0){
 
         grid.innerHTML=`
-            <p>No projects found.</p>
+            <div style="
+                background:white;
+                padding:30px;
+                border-radius:10px;
+                grid-column:1/-1;
+                text-align:center;
+            ">
+                <h3>No listings found</h3>
+                <p>Try another search or category.</p>
+            </div>
         `;
 
         return;
@@ -713,41 +1221,47 @@ function displayProjects(list){
     }
 
 
-    list.forEach((project,index)=>{
+    list.forEach((item,index)=>{
 
         grid.innerHTML += `
 
-        <div class="project-card">
+        <div class="item-card">
 
             <img
-                class="project-image"
-                src="${project.image || 'https://via.placeholder.com/600x400'}"
-                onerror="this.src='https://via.placeholder.com/600x400'"
+                class="item-photo"
+                src="${safeURL(item.image)}"
+                onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'"
             >
 
-            <div class="project-content">
+            <div class="item-info">
 
-                <span class="category">
-                    ${project.category}
+                <span class="item-category">
+                    ${escapeHTML(item.category)}
                 </span>
 
                 <h3>
-                    ${escapeHTML(project.name)}
+                    ${escapeHTML(item.name)}
                 </h3>
 
-                <p class="description">
-                    ${escapeHTML(project.description)}
+                <p class="item-description">
+                    ${escapeHTML(item.description)}
                 </p>
 
-                <div class="price">
-                    ${escapeHTML(project.price)}
+                <div class="item-price">
+                    ${escapeHTML(item.currency)}
+                    ${formatNumber(item.price)}
                 </div>
 
-                <div class="card-buttons">
+                <div class="item-location">
+                    📍 ${escapeHTML(item.city)},
+                    ${escapeHTML(item.country)}
+                </div>
+
+                <div class="item-buttons">
 
                     <button
                         class="view-btn"
-                        onclick="viewProject(${index})"
+                        onclick="viewListing(${index})"
                     >
                         View
                     </button>
@@ -772,9 +1286,12 @@ function displayProjects(list){
 }
 
 
-/* SEARCH */
 
-function filterProjects(){
+/* =========================
+   SEARCH
+========================= */
+
+function filterItems(){
 
     const search =
         document.getElementById("searchInput")
@@ -785,211 +1302,80 @@ function filterProjects(){
         document.getElementById("categoryFilter")
         .value;
 
-
-    const filtered =
-        projects.filter(project=>{
-
-            const matchesSearch =
-                project.name
-                .toLowerCase()
-                .includes(search) ||
-
-                project.description
-                .toLowerCase()
-                .includes(search);
+    const currency =
+        document.getElementById("currencyFilter")
+        .value;
 
 
-            const matchesCategory =
-                category==="all" ||
-                project.category===category;
+    const result =
+        listings.filter(item=>{
+
+            const text =
+                (
+                    item.name+
+                    " "+
+                    item.description+
+                    " "+
+                    item.city+
+                    " "+
+                    item.country
+                ).toLowerCase();
 
 
-            return matchesSearch &&
-                   matchesCategory;
+            const searchOK =
+                text.includes(search);
+
+            const categoryOK =
+                category==="All" ||
+                item.category===category;
+
+            const currencyOK =
+                currency==="All" ||
+                item.currency===currency;
+
+
+            return searchOK &&
+                   categoryOK &&
+                   currencyOK;
 
         });
 
 
-    displayProjects(filtered);
+    displayListings(result);
 
 }
 
 
-/* ADD PROJECT */
 
-function addProject(event){
+/* =========================
+   CATEGORY
+========================= */
 
-    event.preventDefault();
-
-
-    const project={
-
-        name:
-            document.getElementById("projectName").value,
-
-        category:
-            document.getElementById("projectCategory").value,
-
-        price:
-            document.getElementById("projectPrice").value,
-
-        image:
-            document.getElementById("projectImage").value,
-
-        description:
-            document.getElementById("projectDescription").value,
-
-        seller:
-            document.getElementById("sellerName").value,
-
-        email:
-            document.getElementById("sellerEmail").value,
-
-        whatsapp:
-            document.getElementById("sellerWhatsapp").value
-
-    };
-
-
-    projects.unshift(project);
-
-
-    localStorage.setItem(
-        "nomanProjects",
-        JSON.stringify(projects)
-    );
-
-
-    displayProjects(projects);
-
-
-    event.target.reset();
-
-    closeModal("addProjectModal");
-
-
-    alert(
-        "Your project has been published!"
-    );
-
-}
-
-
-/* VIEW PROJECT */
-
-function viewProject(index){
-
-    const project =
-        projects[index];
-
+function selectCategory(category){
 
     document.getElementById(
-        "projectDetails"
-    ).innerHTML=`
+        "categoryFilter"
+    ).value=category;
 
-        <img
-            src="${project.image || 'https://via.placeholder.com/600x400'}"
-            style="width:100%;border-radius:10px;margin-bottom:15px"
-        >
+    filterItems();
 
-        <h2>
-            ${escapeHTML(project.name)}
-        </h2>
-
-        <p style="margin:10px 0">
-            <strong>Category:</strong>
-            ${escapeHTML(project.category)}
-        </p>
-
-        <p style="margin:10px 0">
-            <strong>Price:</strong>
-            ${escapeHTML(project.price)}
-        </p>
-
-        <p style="margin:10px 0;line-height:1.6">
-            ${escapeHTML(project.description)}
-        </p>
-
-        <hr style="margin:20px 0">
-
-        <h3>
-            Seller
-        </h3>
-
-        <p>
-            ${escapeHTML(project.seller)}
-        </p>
-
-        <br>
-
-        <button
-            class="contact-btn"
-            style="width:100%"
-            onclick="contactSeller(${index})"
-        >
-            Contact Seller
-        </button>
-
-    `;
-
-
-    document.getElementById(
-        "detailsModal"
-    ).style.display="flex";
+    window.scrollTo({
+        top:350,
+        behavior:"smooth"
+    });
 
 }
 
 
-/* CONTACT SELLER */
 
-function contactSeller(index){
+/* =========================
+   SELL MODAL
+========================= */
 
-    const project =
-        projects[index];
-
-
-    if(project.whatsapp){
-
-        let number =
-            project.whatsapp
-            .replace(/\D/g,'');
-
-
-        window.open(
-            "https://wa.me/"+number,
-            "_blank"
-        );
-
-        return;
-
-    }
-
-
-    if(project.email){
-
-        window.location.href =
-            "mailto:"+project.email+
-            "?subject=Interested in your project: "+
-            encodeURIComponent(project.name);
-
-        return;
-
-    }
-
-
-    alert(
-        "Seller contact information is not available."
-    );
-
-}
-
-
-/* MODALS */
-
-function openAddProject(){
+function openSellModal(){
 
     document.getElementById(
-        "addProjectModal"
+        "sellModal"
     ).style.display="flex";
 
 }
@@ -1003,20 +1389,333 @@ function closeModal(id){
 }
 
 
-window.onclick=function(event){
+window.addEventListener(
+    "click",
+    function(event){
 
-    if(event.target.classList.contains("modal")){
+        if(
+            event.target.classList.contains("modal")
+        ){
 
-        event.target.style.display="none";
+            event.target.style.display="none";
+
+        }
+
+    }
+);
+
+
+
+/* =========================
+   PHOTO PREVIEW
+========================= */
+
+let selectedImages=[];
+
+
+function previewPhotos(event){
+
+    selectedImages=[];
+
+    const preview =
+        document.getElementById("photoPreview");
+
+    preview.innerHTML="";
+
+
+    const files =
+        Array.from(event.target.files);
+
+
+    files.slice(0,8).forEach(file=>{
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload=function(e){
+
+            selectedImages.push(
+                e.target.result
+            );
+
+
+            preview.innerHTML += `
+
+                <img
+                    class="preview-image"
+                    src="${e.target.result}"
+                >
+
+            `;
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+
+/* =========================
+   PUBLISH
+========================= */
+
+function publishItem(event){
+
+    event.preventDefault();
+
+
+    const image =
+        selectedImages.length
+        ? selectedImages[0]
+        : "";
+
+
+    const newItem={
+
+        name:
+            document.getElementById(
+                "itemName"
+            ).value,
+
+        category:
+            document.getElementById(
+                "itemCategory"
+            ).value,
+
+        price:
+            document.getElementById(
+                "itemPrice"
+            ).value,
+
+        currency:
+            document.getElementById(
+                "itemCurrency"
+            ).value,
+
+        image:image,
+
+        country:
+            document.getElementById(
+                "itemCountry"
+            ).value,
+
+        city:
+            document.getElementById(
+                "itemCity"
+            ).value,
+
+        area:
+            document.getElementById(
+                "itemArea"
+            ).value,
+
+        description:
+            document.getElementById(
+                "itemDescription"
+            ).value,
+
+        seller:
+            document.getElementById(
+                "sellerName"
+            ).value,
+
+        email:
+            document.getElementById(
+                "sellerEmail"
+            ).value,
+
+        whatsapp:
+            document.getElementById(
+                "sellerWhatsapp"
+            ).value
+
+    };
+
+
+    listings.unshift(newItem);
+
+
+    try{
+
+        localStorage.setItem(
+            "nomanMarketplaceListings",
+            JSON.stringify(listings)
+        );
+
+    }catch(error){
+
+        alert(
+            "Image is too large for browser storage. Please use a smaller photo."
+        );
 
     }
 
-};
+
+    displayListings(listings);
 
 
-/* HOME */
+    event.target.reset();
 
-function showHome(){
+    selectedImages=[];
+
+    document.getElementById(
+        "photoPreview"
+    ).innerHTML="";
+
+
+    closeModal("sellModal");
+
+
+    alert(
+        "✅ Your item has been published!"
+    );
+
+
+    window.scrollTo({
+        top:500,
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* =========================
+   VIEW LISTING
+========================= */
+
+function viewListing(index){
+
+    const item =
+        listings[index];
+
+
+    const image =
+        safeURL(item.image);
+
+
+    document.getElementById(
+        "detailsContent"
+    ).innerHTML=`
+
+        <img
+            class="details-image"
+            src="${image}"
+            onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'"
+        >
+
+        <span class="item-category">
+            ${escapeHTML(item.category)}
+        </span>
+
+        <h2>
+            ${escapeHTML(item.name)}
+        </h2>
+
+        <div class="details-price">
+            ${escapeHTML(item.currency)}
+            ${formatNumber(item.price)}
+        </div>
+
+        <p class="details-text">
+            ${escapeHTML(item.description)}
+        </p>
+
+        <p class="details-text">
+            📍 <strong>Location:</strong>
+            ${escapeHTML(item.area || "")},
+            ${escapeHTML(item.city)},
+            ${escapeHTML(item.country)}
+        </p>
+
+        <hr style="margin:20px 0">
+
+        <h3>
+            Seller Information
+        </h3>
+
+        <p class="details-text">
+            👤 ${escapeHTML(item.seller)}
+        </p>
+
+        <button
+            class="contact-btn"
+            style="width:100%;padding:13px"
+            onclick="contactSeller(${index})"
+        >
+            📞 Contact Seller
+        </button>
+
+    `;
+
+
+    document.getElementById(
+        "detailsModal"
+    ).style.display="flex";
+
+}
+
+
+
+/* =========================
+   CONTACT SELLER
+========================= */
+
+function contactSeller(index){
+
+    const item =
+        listings[index];
+
+
+    if(item.whatsapp){
+
+        const number =
+            item.whatsapp
+            .replace(/\D/g,"");
+
+
+        window.open(
+            "https://wa.me/"+number,
+            "_blank"
+        );
+
+        return;
+
+    }
+
+
+    if(item.email){
+
+        window.location.href =
+            "mailto:"+item.email+
+            "?subject="+
+            encodeURIComponent(
+                "Interested in: "+item.name
+            );
+
+        return;
+
+    }
+
+
+    alert(
+        "Seller contact information is not available."
+    );
+
+}
+
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome(){
 
     window.scrollTo({
         top:0,
@@ -1026,11 +1725,14 @@ function showHome(){
 }
 
 
-/* SECURITY */
+
+/* =========================
+   HELPERS
+========================= */
 
 function escapeHTML(text){
 
-    return String(text)
+    return String(text || "")
         .replace(/&/g,"&amp;")
         .replace(/</g,"&lt;")
         .replace(/>/g,"&gt;")
@@ -1040,9 +1742,39 @@ function escapeHTML(text){
 }
 
 
-/* INITIAL DISPLAY */
+function safeURL(url){
 
-displayProjects(projects);
+    if(!url){
+        return "https://via.placeholder.com/600x400?text=No+Image";
+    }
+
+    return String(url)
+        .replace(/"/g,"%22")
+        .replace(/'/g,"%27");
+
+}
+
+
+function formatNumber(number){
+
+    const n =
+        Number(number);
+
+    if(isNaN(n)){
+        return escapeHTML(number);
+    }
+
+    return n.toLocaleString();
+
+}
+
+
+
+/* =========================
+   INITIAL LOAD
+========================= */
+
+displayListings(listings);
 
 </script>
 
